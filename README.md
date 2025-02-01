@@ -80,3 +80,6 @@ laravel new example-app
 
 -*ejecutar el servicio
 Composer run dev
+
+como darle estilos al README:
+https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
