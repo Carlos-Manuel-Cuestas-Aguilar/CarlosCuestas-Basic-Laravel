@@ -17,7 +17,7 @@ Laravel es un framework de aplicaciones web con una sintaxis expresiva y elegant
 
   - Non-Thread Safe (NTS): Esta versión es más ligera y rápida, pero solo es recomendable cuando se usa PHP en servidores con FastCGI o en entornos de línea de comandos (CLI) donde no se necesitan múltiples hilos. Si estás trabajando con Laravel localmente y en el entorno de desarrollo, puedes optar por esta versión, pero la TS es más comúnmente usada en producción.
 
-- **dentro de la carpeta de php buscar "php.ini", abrirlo y quitar ";" de las siguientes extensiones seleccionar según el tipo de proyecto:**
+🔹 **dentro de la carpeta de php buscar "php.ini", abrirlo y quitar ";" de las siguientes extensiones seleccionar según el tipo de proyecto:**
 
   - extension=fileinfo: Permite determinar el tipo de archivo según su contenido y no solo por su extensión. Es útil para validar los tipos de archivos cargados en el servidor. Producto/Proyecto: Aplicaciones web que gestionan cargas de archivos, como plataformas de almacenamiento en la nube o sistemas de gestión de contenido.
 
@@ -50,12 +50,20 @@ Laravel es un framework de aplicaciones web con una sintaxis expresiva y elegant
   - extension=ftp: Permite interactuar con servidores FTP para transferir archivos, como subir o descargar archivos desde un servidor remoto. Producto/Proyecto: Aplicaciones que gestionan archivos o permiten transferencias de datos desde o hacia servidores FTP, como sistemas de backup en la nube o aplicaciones de carga de archivos.
 
 ### [COMPOSER](https://getcomposer.org/download).
-### [Laravel Intaller](https://github.com/laravel/installer).  /*En consola escribir "composer global require laravel/installer" */
+### [Laravel Intaller](https://github.com/laravel/installer).  
+**En una nueva consola escribir:**
+```
+composer global require laravel/installer
+```
+
 ### [NODE](https://nodejs.org/es).
 
 ## método rápido de instalación de PHP y Composer:
- **Correr consola como administrador**
+ 🔹 **Correr consola como administrador**
+ ```
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.4'))
+```
+
 
 `código en línea`.
 🔹 **Salida**:
