@@ -14,9 +14,9 @@
 Laravel es un framework de aplicaciones web con una sintaxis expresiva y elegante. Creemos que el desarrollo debe ser una experiencia agradable y creativa para que sea realmente satisfactorio. Laravel elimina el dolor del desarrollo al facilitar las tareas comunes utilizadas en muchos proyectos web,en mi caso hare un sistema basico de login y control de productos en sqlite, para poder usarlo se deben tener instalados ciertos paquetes y son:
 
 ### [PHP👆](https://www.php.net).
-  - 🔳 Thread Safe (TS): Esta versión es más segura para entornos de servidor, ya que está diseñada para manejar múltiples hilos de ejecución, lo cual es importante cuando PHP se ejecuta en un servidor web con Apache o similar.
+  -  ✅Thread Safe (TS): Esta versión es más segura para entornos de servidor, ya que está diseñada para manejar múltiples hilos de ejecución, lo cual es importante cuando PHP se ejecuta en un servidor web con Apache o similar.
 
-  - ✅ Non-Thread Safe (NTS): Esta versión es más ligera y rápida, pero solo es recomendable cuando se usa PHP en servidores con FastCGI o en entornos de línea de comandos (CLI) donde no se necesitan múltiples hilos. Si estás trabajando con Laravel localmente y en el entorno de desarrollo, puedes optar por esta versión, pero la TS es más comúnmente usada en producción.
+  -  🔳Non-Thread Safe (NTS): Esta versión es más ligera y rápida, pero solo es recomendable cuando se usa PHP en servidores con FastCGI o en entornos de línea de comandos (CLI) donde no se necesitan múltiples hilos. Si estás trabajando con Laravel localmente y en el entorno de desarrollo, puedes optar por esta versión, pero la TS es más comúnmente usada en producción.
 
 >🔹 dentro de la carpeta de php buscar "**php.ini**", abrirlo y quitar "**;**" de las siguientes extensiones `;extension=fileinfo` seleccionar según el tipo de proyecto:
 
