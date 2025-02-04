@@ -1,5 +1,6 @@
 # Laravel Basico para uso General
 
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -67,41 +68,36 @@ composer global require laravel/installer
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.4'))
 ```
 
-
-`código en línea`.
-🔹 **Salida**:
+## Crear un Proyecto
+en una consola en el escritorio escribir:
 ```
-Este es un bloque de código sin resaltar.
-```
-- ✅ #739
-- 🔲 https://github.com/octo-org/octo-repo/issues/740
-- 🔳 Add delight to the experience when all tasks are complete 🎉
-
--*- Crear un Proyecto
 laravel new example-app
+```
+1. Would you like to install a starter kit? [No starter kit]: /* este proyecto es básico, elegiré "none" */
+  - ✅**none**: No instalará ningún kit de inicio. Es ideal si quieres empezar desde cero sin ninguna funcionalidad adicional.
+  - **breeze**: Laravel Breeze es un kit de inicio básico que incluye autenticación (registro, inicio de sesión, restablecimiento de contraseña) y una interfaz de usuario simple utilizando Blade (el motor de plantillas de Laravel) y Tailwind CSS.
+  - **jetstream**: Laravel Jetstream es un kit de inicio más avanzado que incluye más características que Breeze, como autenticación, verificación de correo electrónico, administración de sesiones y equipos (para aplicaciones colaborativas). También ofrece soporte para Livewire o Inertia.js, lo que permite construir aplicaciones más dinámicas sin tener que escribir mucho código JavaScript.
 
--*-*- Would you like to install a starter kit? [No starter kit]: /* este proyecto es básico, elegiré "none" */
--*-*--none: No instalará ningún kit de inicio. Es ideal si quieres empezar desde cero sin ninguna funcionalidad adicional.
--*-*--breeze: Laravel Breeze es un kit de inicio básico que incluye autenticación (registro, inicio de sesión, restablecimiento de contraseña) y una interfaz de usuario simple utilizando Blade (el motor de plantillas de Laravel) y Tailwind CSS.
--*-*--jetstream: Laravel Jetstream es un kit de inicio más avanzado que incluye más características que Breeze, como autenticación, verificación de correo electrónico, administración de sesiones y equipos (para aplicaciones colaborativas). También ofrece soporte para Livewire o Inertia.js, lo que permite construir aplicaciones más dinámicas sin tener que escribir mucho código JavaScript.
+2.Which testing framework do you prefer? [Pest]: /* escoger pest, el mas adecuado y rapido */
+  - ✅**Pest**: Pest es un framework de pruebas más moderno y elegante que se construye sobre PHPUnit, y está diseñado para ser más fácil de usar y entender, con una sintaxis más simple.
+  - **PHPUnit**: PHPUnit es el framework de pruebas estándar en Laravel (y PHP en general). Es ampliamente utilizado y tiene más configuraciones avanzadas, pero su sintaxis puede ser más compleja en comparación con Pest.
 
--*-*-Which testing framework do you prefer? [Pest]: /* escoger pest, el mas adecuado y rapido */
--*-*--Pest: Pest es un framework de pruebas más moderno y elegante que se construye sobre PHPUnit, y está diseñado para ser más fácil de usar y entender, con una sintaxis más simple.
--*-*--PHPUnit: PHPUnit es el framework de pruebas estándar en Laravel (y PHP en general). Es ampliamente utilizado y tiene más configuraciones avanzadas, pero su sintaxis puede ser más compleja en comparación con Pest.
+3.Which database will your application use? [SQLite]: /*para prueba básica y sin complicaciones escogí SQLite*/
+  - ✅**sqlite**: SQLite es una base de datos ligera que se almacena en un solo archivo. Es ideal para aplicaciones pequeñas o para desarrollo local, donde no necesitas una base de datos compleja.
+  - **mysql**: MySQL es una base de datos relacional muy popular. Es ideal para aplicaciones más grandes o cuando necesitas alta disponibilidad, escalabilidad o características más avanzadas.
+  - **mariadb**: MariaDB es una bifurcación de MySQL, creada por los mismos desarrolladores de MySQL. Es completamente compatible con MySQL, pero tiene algunas mejoras y características adicionales.
+  - **pgsql**: PostgreSQL es una base de datos relacional avanzada, conocida por su rendimiento y características como transacciones ACID, y soporte para consultas complejas. Es útil si necesitas un sistema de base de datos robusto.
+  - **sqlsrv**: SQL Server es una base de datos de Microsoft. Es ideal si estás trabajando en un entorno de Microsoft y necesitas integrarte con otras tecnologías de Microsoft.
 
--*-*-Which database will your application use? [SQLite]: /*para prueba básica y sin complicaciones escogí SQLite*/
--*-*--sqlite: SQLite es una base de datos ligera que se almacena en un solo archivo. Es ideal para aplicaciones pequeñas o para desarrollo local, donde no necesitas una base de datos compleja.
--*-*--mysql: MySQL es una base de datos relacional muy popular. Es ideal para aplicaciones más grandes o cuando necesitas alta disponibilidad, escalabilidad o características más avanzadas.
--*-*--mariadb: MariaDB es una bifurcación de MySQL, creada por los mismos desarrolladores de MySQL. Es completamente compatible con MySQL, pero tiene algunas mejoras y características adicionales.
--*-*--pgsql: PostgreSQL es una base de datos relacional avanzada, conocida por su rendimiento y características como transacciones ACID, y soporte para consultas complejas. Es útil si necesitas un sistema de base de datos robusto.
--*-*--sqlsrv: SQL Server es una base de datos de Microsoft. Es ideal si estás trabajando en un entorno de Microsoft y necesitas integrarte con otras tecnologías de Microsoft.
+4.Would you like to run the default database migrations? (yes/no) [yes]: /* es solo para que corra las migraciones o no*/
+  - ✅**yes**: Laravel ejecutará las migraciones predeterminadas que incluyen tablas como users, password_resets, failed_jobs, etc., dependiendo de las opciones seleccionadas.
+  - **no**: Si eliges "no", Laravel no ejecutará ninguna migración al instalar el proyecto, y serás tú quien maneje la creación de las tablas manualmente o mediante migraciones personalizadas.
 
--*-*-Would you like to run the default database migrations? (yes/no) [yes]: /* es solo para que corra las migraciones o no*/
--*-*--yes: Laravel ejecutará las migraciones predeterminadas que incluyen tablas como users, password_resets, failed_jobs, etc., dependiendo de las opciones seleccionadas.
--*-*--no: Si eliges "no", Laravel no ejecutará ninguna migración al instalar el proyecto, y serás tú quien maneje la creación de las tablas manualmente o mediante migraciones personalizadas.
-
--*ejecutar el servicio
+-*ejecutar el servicio en la consola de la carpeta del proyecto
+```
 Composer run dev
+```
+
 
 como darle estilos al README:
 https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
