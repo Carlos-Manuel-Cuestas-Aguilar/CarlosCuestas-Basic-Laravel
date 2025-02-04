@@ -1,3 +1,6 @@
+# Laravel Basico para uso General
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -7,60 +10,94 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Requisitos
+Laravel es un framework de aplicaciones web con una sintaxis expresiva y elegante. Creemos que el desarrollo debe ser una experiencia agradable y creativa para que sea realmente satisfactorio. Laravel elimina el dolor del desarrollo al facilitar las tareas comunes utilizadas en muchos proyectos web,en mi caso hare un sistema basico de login y control de productos en sqlite, para poder usarlo se deben tener instalados ciertos paquetes y son:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### [PHP👆](https://www.php.net).
+  - 🔳 Thread Safe (TS): Esta versión es más segura para entornos de servidor, ya que está diseñada para manejar múltiples hilos de ejecución, lo cual es importante cuando PHP se ejecuta en un servidor web con Apache o similar.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+  - ✅ Non-Thread Safe (NTS): Esta versión es más ligera y rápida, pero solo es recomendable cuando se usa PHP en servidores con FastCGI o en entornos de línea de comandos (CLI) donde no se necesitan múltiples hilos. Si estás trabajando con Laravel localmente y en el entorno de desarrollo, puedes optar por esta versión, pero la TS es más comúnmente usada en producción.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+>🔹 dentro de la carpeta de php buscar "**php.ini**", abrirlo y quitar "**;**" de las siguientes extensiones `;extension=fileinfo` seleccionar según el tipo de proyecto:
 
-## Learning Laravel
+  - ✅ **extension=fileinfo**: Permite determinar el tipo de archivo según su contenido y no solo por su extensión. Es útil para validar los tipos de archivos cargados en el servidor. Producto/Proyecto: Aplicaciones web que gestionan cargas de archivos, como plataformas de almacenamiento en la nube o sistemas de gestión de contenido.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+  - 🔳 **extension=pdo_mysql**: Permite a PHP interactuar con bases de datos MySQL a través de PDO (PHP Data Objects). Es más seguro y flexible que las antiguas funciones de MySQL. Producto/Proyecto: Cualquier aplicación que use MySQL como base de datos, como un sistema de gestión de inventarios o un sitio web de comercio electrónico.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+  - ✅ **extension=pdo_sqlite**: Proporciona soporte para bases de datos SQLite utilizando PDO. Ideal para bases de datos más ligeras y locales. Producto/Proyecto: Aplicaciones pequeñas o móviles, o sistemas locales de gestión que no necesitan servidores de bases de datos grandes.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+  - ✅ **extension=openssl**: Permite la encriptación y seguridad mediante SSL/TLS. Se utiliza para conexiones seguras y encriptación de datos. Producto/Proyecto: Cualquier aplicación que maneje datos sensibles o que requiera una comunicación segura, como sistemas bancarios en línea o tiendas de comercio electrónico.
 
-## Laravel Sponsors
+  - ✅ **extension=mbstring**: Permite trabajar con cadenas de texto multibyte, como caracteres especiales de lenguajes asiáticos (chino, japonés, etc.). Producto/Proyecto: Aplicaciones que gestionan contenido multilingüe, como plataformas de traducción, foros internacionales o cualquier aplicación que maneje diferentes alfabetos.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+  - ✅ **extension=curl**: Permite realizar solicitudes HTTP y manejar la comunicación con otros servicios web a través de cURL. Producto/Proyecto: Integraciones con APIs externas, como aplicaciones que obtienen datos de otras plataformas o servicios de pagos.
 
-### Premium Partners
+  - ✅ **extension=intl**: Proporciona soporte para internacionalización e idiomas (formatos de fecha, moneda, etc.), permitiendo la localización de la aplicación. Producto/Proyecto: Aplicaciones globales que necesitan soportar múltiples idiomas, como plataformas de comercio internacional o aplicaciones de contenido diverso.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+  - ✅ **extension=gd**: Proporciona herramientas para crear y manipular imágenes en PHP. Permite generar gráficos, redimensionar imágenes, etc. Producto/Proyecto: Aplicaciones de generación de gráficos o imágenes, como sistemas de gestión de contenidos, galerías de fotos, o generadores de miniaturas.
 
-## Contributing
+  - ✅ **extension=zip**: Permite trabajar con archivos comprimidos en formato .zip, tanto para descomprimir como para crear archivos zip. Producto/Proyecto: Herramientas de compresión de archivos o cualquier aplicación que permita a los usuarios subir o descargar archivos comprimidos, como servicios de almacenamiento o descarga masiva de archivos.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+  - ✅ **extension=sqlite3**: Soporta la base de datos SQLite, una base de datos ligera que no requiere un servidor de base de datos externo. Producto/Proyecto: Aplicaciones locales o móviles que no necesitan un servidor de base de datos completo, como aplicaciones de escritorio o apps móviles pequeñas.
 
-## Code of Conduct
+  - 🔳 **extension=pdo_pgsql**: Proporciona soporte para la base de datos PostgreSQL a través de PDO. Producto/Proyecto: Aplicaciones que requieren bases de datos PostgreSQL, como proyectos de gestión de datos empresariales o aplicaciones científicas.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+  - 🔳 **extension=pdo_odbc**: Soporta la conexión a bases de datos mediante ODBC, permitiendo la integración con distintos tipos de bases de datos. Producto/Proyecto: Aplicaciones que deben conectarse a bases de datos empresariales a través de ODBC, como sistemas de gestión empresarial (ERP) o aplicaciones de integración de datos.
 
-## Security Vulnerabilities
+  - 🔳 **extension=mysqli**: Permite interactuar con bases de datos MySQL utilizando la interfaz MySQLi. Ofrece características más modernas que mysql pero menos flexible que PDO. Producto/Proyecto: Aplicaciones que usan bases de datos MySQL, especialmente cuando se requiere un acceso rápido y sencillo a la base de datos sin las características adicionales de PDO.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+  - 🔳 **extension=odbc**: Permite la conexión a bases de datos a través de ODBC, proporcionando un acceso más general a una variedad de bases de datos. Producto/Proyecto: Proyectos que necesitan conectarse a diferentes tipos de bases de datos o utilizar bases de datos heredadas en entornos empresariales.
 
-## License
+  - 🔳 **extension=ftp**: Permite interactuar con servidores FTP para transferir archivos, como subir o descargar archivos desde un servidor remoto. Producto/Proyecto: Aplicaciones que gestionan archivos o permiten transferencias de datos desde o hacia servidores FTP, como sistemas de backup en la nube o aplicaciones de carga de archivos.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+### [COMPOSER👆](https://getcomposer.org/download).
+
+### [NODE👆](https://nodejs.org/es).
+
+### [Larave👆l Intaller](https://github.com/laravel/installer).  
+**En una nueva consola escribir:**
+```
+composer global require laravel/installer
+```
+
+## método rápido de instalación de PHP y Composer:
+ 🔹 **Correr consola como administrador**
+ ```
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.4'))
+```
+
+## Crear un Proyecto
+en una consola en el escritorio escribir:
+```
+laravel new example-app
+```
+1. Would you like to install a starter kit? [No starter kit]: /* este proyecto es básico, elegiré "none" */
+  - ✅**none**: No instalará ningún kit de inicio. Es ideal si quieres empezar desde cero sin ninguna funcionalidad adicional.
+  - **breeze**: Laravel Breeze es un kit de inicio básico que incluye autenticación (registro, inicio de sesión, restablecimiento de contraseña) y una interfaz de usuario simple utilizando Blade (el motor de plantillas de Laravel) y Tailwind CSS.
+  - **jetstream**: Laravel Jetstream es un kit de inicio más avanzado que incluye más características que Breeze, como autenticación, verificación de correo electrónico, administración de sesiones y equipos (para aplicaciones colaborativas). También ofrece soporte para Livewire o Inertia.js, lo que permite construir aplicaciones más dinámicas sin tener que escribir mucho código JavaScript.
+
+2.Which testing framework do you prefer? [Pest]: /* escoger pest, el mas adecuado y rapido */
+  - ✅**Pest**: Pest es un framework de pruebas más moderno y elegante que se construye sobre PHPUnit, y está diseñado para ser más fácil de usar y entender, con una sintaxis más simple.
+  - **PHPUnit**: PHPUnit es el framework de pruebas estándar en Laravel (y PHP en general). Es ampliamente utilizado y tiene más configuraciones avanzadas, pero su sintaxis puede ser más compleja en comparación con Pest.
+
+3.Which database will your application use? [SQLite]: /*para prueba básica y sin complicaciones escogí SQLite*/
+  - ✅**sqlite**: SQLite es una base de datos ligera que se almacena en un solo archivo. Es ideal para aplicaciones pequeñas o para desarrollo local, donde no necesitas una base de datos compleja.
+  - **mysql**: MySQL es una base de datos relacional muy popular. Es ideal para aplicaciones más grandes o cuando necesitas alta disponibilidad, escalabilidad o características más avanzadas.
+  - **mariadb**: MariaDB es una bifurcación de MySQL, creada por los mismos desarrolladores de MySQL. Es completamente compatible con MySQL, pero tiene algunas mejoras y características adicionales.
+  - **pgsql**: PostgreSQL es una base de datos relacional avanzada, conocida por su rendimiento y características como transacciones ACID, y soporte para consultas complejas. Es útil si necesitas un sistema de base de datos robusto.
+  - **sqlsrv**: SQL Server es una base de datos de Microsoft. Es ideal si estás trabajando en un entorno de Microsoft y necesitas integrarte con otras tecnologías de Microsoft.
+
+4.Would you like to run the default database migrations? (yes/no) [yes]: /* es solo para que corra las migraciones o no*/
+  - ✅**yes**: Laravel ejecutará las migraciones predeterminadas que incluyen tablas como users, password_resets, failed_jobs, etc., dependiendo de las opciones seleccionadas.
+  - **no**: Si eliges "no", Laravel no ejecutará ninguna migración al instalar el proyecto, y serás tú quien maneje la creación de las tablas manualmente o mediante migraciones personalizadas.
+
+-*ejecutar el servicio en la consola de la carpeta del proyecto
+```
+Composer run dev
+```
+
+
+como darle estilos al README:
+https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
